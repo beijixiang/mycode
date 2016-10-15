@@ -8,7 +8,13 @@ import java.sql.*;
 
 public class Base {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        template();
+        for (int i = 0; i < 10; i++) {
+            Connection connection = jdbcUtils.getConnection();
+            System.out.println(connection);
+             jdbcUtils.free(null, null, connection);
+        }
+//        template();
+
     }
 
     static void template() throws SQLException {
